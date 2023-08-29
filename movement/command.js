@@ -1,5 +1,7 @@
 const forward = require("./forward").forward;
 const backward = require("./backward").backward;
+const left = require("./left").left;
+const right = require("./right").right;
 
 function command(commands, start){
   let direction = start.direction;
@@ -16,6 +18,14 @@ function command(commands, start){
         coordinates = backward(coordinates, direction);
         console.log(coordinates, direction);
       }
+      else if (c === "l") {
+        direction = left(direction);
+        console.log(coordinates, direction);
+      }
+      else if (c === "r") {
+        direction = right(direction);
+        console.log(coordinates, direction);
+      } 
       else {
         console.log("Invalid command");
       }
