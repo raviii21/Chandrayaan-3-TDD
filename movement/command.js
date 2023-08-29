@@ -2,6 +2,8 @@ const forward = require("./forward").forward;
 const backward = require("./backward").backward;
 const left = require("./left").left;
 const right = require("./right").right;
+const up = require("./up").up;
+const down = require("./down").down;
 
 function command(commands, start){
   let direction = start.direction;
@@ -26,6 +28,14 @@ function command(commands, start){
         direction = right(direction);
         console.log(coordinates, direction);
       } 
+      else if (c === "u") {
+        direction = up(direction);
+        console.log(coordinates, direction);
+      } 
+      else if (c === "d") {
+        direction = down(direction);
+        console.log(coordinates, direction);
+      }
       else {
         console.log("Invalid command");
       }
